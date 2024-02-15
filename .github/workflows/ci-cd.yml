@@ -23,8 +23,8 @@ jobs:
           aws-region: us-east-1
       - name: Create AWS Lambda Function
         run: |
-          aws lambda create-function --function-name HandlerString --runtime java17 --handler integration.ninjas.HandlerString::handleRequest --role arn:aws:iam::763857617563:role/lambda-ex --zip-file fileb://target/lambda-basic-1.0-SNAPSHOT.jar
+          aws lambda create-function --function-name HandlerString --runtime java17 --handler com.example.demo.p1.MyLambda::handleRequest --role arn:aws:iam::891377247923:role/lambda-ex --zip-file fileb://target//demoLambdaCiCd/target/demoLambdaCiCd-0.0.1-SNAPSHOT-aws.jar
         continue-on-error: true  
       - name: Update Lambda Function    
-        run: aws lambda update-function-code --function-name HandlerString --zip-file fileb://target/lambda-basic-1.0-SNAPSHOT.jar
+        run: aws lambda update-function-code --function-name HandlerString --zip-file fileb://target//demoLambdaCiCd/target/demoLambdaCiCd-0.0.1-SNAPSHOT-aws.jar
        
